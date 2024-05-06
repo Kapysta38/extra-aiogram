@@ -7,4 +7,4 @@ class GroupInfo(Base):
     __tablename__ = 'groups_info'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(255))
+    name = Column(String(255), unique=True)
