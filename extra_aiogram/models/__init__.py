@@ -40,3 +40,12 @@ def create_tables():
 # Функция для удаления всех таблиц (используйте с осторожностью!)
 def drop_tables():
     metadata.drop_all(engine)
+
+
+def initialize_default_groups():
+    session = Session()
+    session.add_all([
+        GroupInfo(name='admin'),
+        GroupInfo(name='user')
+    ])
+    session.commit()
