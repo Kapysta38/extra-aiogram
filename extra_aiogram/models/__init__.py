@@ -1,10 +1,16 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
+from extra_aiogram.config import settings
+from .base import Base
 from .users import User
-from .base import Base  # Импорт Base из текущего пакета
+from .chats import Chat
+from .groups import Group
+from .groups_info import GroupInfo
+from .messages import Message
 
 # Создание движка SQLAlchemy, подключенного к базе данных
-engine = create_engine('sqlite:///mydatabase.db')  # Измените URL на вашу базу данных
+engine = create_engine(settings.DATABASE_URL)  # Измените URL на вашу базу данных
 Session = sessionmaker(bind=engine)
 
 

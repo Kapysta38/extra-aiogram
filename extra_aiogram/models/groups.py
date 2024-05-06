@@ -1,9 +1,10 @@
-from sqlalchemy import Column, Integer, String
-from base import Base
+from sqlalchemy import Column, Integer, ForeignKey
+
+from .base import Base
 
 
-class GroupInfo(Base):
-    __tablename__ = 'groups_info'
+class Group(Base):
+    __tablename__ = 'groups'
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String(255))
+    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
+    group_id = Column(Integer, ForeignKey('groups_info.id'), primary_key=True)

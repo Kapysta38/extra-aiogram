@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
-from base import Base
+
+from .base import Base
 
 
 class Message(Base):

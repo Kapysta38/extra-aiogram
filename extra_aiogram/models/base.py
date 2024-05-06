@@ -1,5 +1,7 @@
 import importlib
+
 from sqlalchemy.ext.declarative import declarative_base
+
 from extra_aiogram.config import settings
 
 # Динамическая загрузка настраиваемого Base, если предоставлено
